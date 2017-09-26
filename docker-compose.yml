@@ -1,0 +1,31 @@
+version: "2"
+services:
+  backend:
+    container_name: backend
+    build: ./backend
+    volumes:
+      - ./backend/src:/src
+    ports:
+      - 3000:3000
+    links:
+      - db
+    env_file: ./backend/.env
+    stdin_open: true
+    tty: true
+  db:
+    container_name: db
+    image: postgres
+    volumes:
+      - ./db/data:/data/postgres
+    ports:
+      - 5432:5432
+    env_file: ./db/.env
+  pgadmin:
+    container_name: pgadmin
+    image: fenglc/pgadmin4
+    volumes:
+      - ./pgadmin:/root/.pgadmin
+    ports:
+      - 5050:5050
+    links:
+      - db
