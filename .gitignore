@@ -27,5 +27,5 @@
 .DS_Store
 
 # Ignore Docker folder structure
-db
-pgadmin
+/db
+/pgadmin
