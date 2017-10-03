@@ -1,0 +1,8 @@
+<h1>Sign up</h1>
+<%= form_with scope: :user, url: signup_path, local: true  do |form| %>
+    <%= form.label :username %>
+    <%= form.text_field :username, id: :username %>
+    <%= form.label :password %>
+    <%= form.password_field :password, password: :password %>
+    <%= form.submit 'Submit' %>
+<% end %>
