@@ -10,7 +10,7 @@
 # Ignore all logfiles and tempfiles.
 /backend/src/log/*
 /backend/src/tmp/*
-!/;backend/src/log/.keep
+!/backend/src/log/.keep
 !/backend/src/tmp/.keep
 
 /node_modules
