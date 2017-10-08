@@ -18,8 +18,8 @@
 
 /backend/.byebug_history
 
-# Ignore public data
-/backend/src/public/data
+# Ignore uploads data
+/backend/src/public/uploads
 
 # Ignore IDE
 .idea
