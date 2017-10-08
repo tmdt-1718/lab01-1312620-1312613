@@ -7,6 +7,9 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
+        <a class="nav-link <%= active_class 'albums' %>" href="/albums">Album</a>
+      </li>
+      <li class="nav-item">
         <a class="nav-link <%= active_class 'blogs' %>" href="/blogs">Blog</a>
       </li>
       <li class="nav-item">
@@ -19,8 +22,11 @@
           <li class="navbar-item"><a href="/logout" class="navbar-link">Logout</a></li>
         </ul>
     <% else %>
-        <ul class="navbar-nav">
+        <ul class="navbar-nav pr-1">
           <li class="navbar-item"><a href="/login" class="navbar-link btn btn-outline-light">Login</a></li>
+        </ul>
+        <ul class="navbar-nav">
+          <li class="navbar-item"><a href="/signup" class="navbar-link btn btn-primary">Sign up</a></li>
         </ul>
     <% end %>
   </div>

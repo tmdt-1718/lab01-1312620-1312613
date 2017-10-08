@@ -14,6 +14,11 @@ Rails.application.routes.draw do
   # Blogs
   resources :blogs
 
+  # Albums
+  resources :albums do
+    resource :images
+  end
+
   # Abouts
   get 'about' => 'abouts#index'
 

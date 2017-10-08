@@ -1,0 +1,13 @@
+<div class="card">
+  <img class="image-source card-img-top" src="<%= image.source %>" alt="">
+  <div class="card-body">
+    <h6 class="card-title">Author: <%= image.user.username %></h6>
+    <% if image.view %>
+        <h6 class="card-subtitle text-muted mb-2"><%= image.view %></h6>
+    <% end %>
+    <h6 class="card-subtitle text-muted mb-2"><%= time_ago_in_words image.created_at %></h6>
+    <% if authorize_album %>
+      <%= link_to 'Delete', album_images_path({album_id: params[:id], id: image.id}), remote: true, method: :delete, class: 'card-link' %>
+    <% end %>
+  </div>
+</div>

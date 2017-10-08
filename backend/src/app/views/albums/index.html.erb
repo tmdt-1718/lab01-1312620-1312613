@@ -1,0 +1,7 @@
+<div class="row">
+  <% @albums.each do |album| %>
+      <div class="albums-card-wrapper">
+        <%= render partial: 'album', locals: {album: album} %>
+      </div>
+  <% end %>
+</div>

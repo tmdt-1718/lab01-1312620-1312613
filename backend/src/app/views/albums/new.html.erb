@@ -1,0 +1,10 @@
+<h1>New album</h1>
+<%= form_with scope: :album, url: albums_path, local: true do |form| %>
+    <% form.multipart %>
+    <div class="form-group">
+      <%= form.label :cover %>
+      <%= form.file_field :cover, id: :cover, class: 'form-control-file' %>
+    </div>
+    <%= form.submit 'Save', class: 'btn btn-primary' %>
+<% end %>
+

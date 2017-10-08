@@ -1,0 +1,11 @@
+<div class="card">
+  <img class="album-cover card-img-top" src="<%= album.cover %>" alt="">
+  <div class="card-body">
+    <h6 class="card-title">Author: <%= album.user.username %></h6>
+    <% if album.view %>
+        <h6 class="card-subtitle text-muted mb-2"><%= album.view %></h6>
+    <% end %>
+    <h6 class="card-subtitle text-muted mb-2"><%= time_ago_in_words album.created_at %></h6>
+    <%= link_to 'See more', album_path(album.id) %>
+  </div>
+</div>

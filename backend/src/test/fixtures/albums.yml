@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  cover: MyString
+  user: one
+  view: 1
+
+two:
+  cover: MyString
+  user: two
+  view: 1

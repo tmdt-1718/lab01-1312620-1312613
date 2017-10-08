@@ -1,0 +1,14 @@
+<div class="row">
+  <ul>
+    <li>Author: <%= @album.user.username %></li>
+    <li><%= time_ago_in_words @album.created_at %></li>
+  </ul>
+</div>
+
+<div class="row">
+  <% @album.images.each do |image| %>
+      <div class="album-image-wrapper">
+        <%= render partial: 'images/image', locals: {image: image} %>
+      </div>
+  <% end %>
+</div>

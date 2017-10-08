@@ -1,5 +1,5 @@
 class BlogsController < ApplicationController
-  before_action :authenticate
+  before_action :authenticate, only: [:new, :create]
 
   def index
     @articles = Article.all
@@ -12,8 +12,8 @@ class BlogsController < ApplicationController
   end
 
   def create
-    @user = current_user
-    @article = @user.articles.create!(article_params)
+    user = current_user
+    article = user.articles.create!(article_params)
     redirect_to blogs_path
   rescue ActiveRecord::RecordNotSaved => e
     redirect_to new_blog_path

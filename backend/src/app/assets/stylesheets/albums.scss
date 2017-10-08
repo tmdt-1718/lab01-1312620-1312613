@@ -1,0 +1,17 @@
+.albums {
+  &-card-wrapper {
+    padding: 8px;
+    width: 33.33%;
+  }
+}
+
+.album {
+  &-cover {
+    height: 300px;
+  }
+
+  &-image-wrapper {
+    padding: 8px;
+    width: 33%;
+  }
+}
