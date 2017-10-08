@@ -1,9 +1,3 @@
 <% @articles.each do |article| %>
-    <div>
-      <img src='<%= article.thumbnail %>'>
-      <h3><%= article.title %></h3>
-      <h4><%= article.chapeau %></h4>
-      <p>Span: <%= article.view %></p>
-      <%= link_to 'See more', blog_path(article.id) %>
-    </div>
+    <%= render partial: 'article', locals: {article: article} %>
 <% end %>

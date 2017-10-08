@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  # Home
+  get 'home' => 'home#index'
+
   # Authentication
   get 'login' => 'sessions#new'
   post 'login' => 'sessions#create'
@@ -13,5 +16,6 @@ Rails.application.routes.draw do
 
   # Abouts
   get 'about' => 'abouts#index'
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  root 'home#index'
 end

@@ -1,7 +1,27 @@
-<div>
-  <% if current_user %>
-      Logged in as <%= current_user.username %> | <%= link_to 'Logout', logout_path %>
-  <% else %>
-      <%= link_to 'Login', login_path %>
-  <% end %>
-</div>
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+  <a href="/" class="navbar-brand">LAB01</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link <%= active_class 'blogs' %>" href="/blogs">Blog</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link <%= active_class 'abouts' %>" href="/about">About</a>
+      </li>
+    </ul>
+    <% if current_user %>
+        <span class="navbar-text">Welcome, <%= current_user.username %>!</span>
+        <ul class="navbar-nav">
+          <li class="navbar-item"><a href="/logout" class="navbar-link">Logout</a></li>
+        </ul>
+    <% else %>
+        <ul class="navbar-nav">
+          <li class="navbar-item"><a href="/login" class="navbar-link btn btn-outline-light">Login</a></li>
+        </ul>
+    <% end %>
+  </div>
+</nav>

@@ -1,21 +1,24 @@
 <h1>New blog</h1>
 <%= form_with scope: :article, url: blogs_path, local: true do |form| %>
     <% form.multipart %>
-    <div>
-      <%= form.label :thumbnail %>
-      <%= form.file_field :thumbnail, id: :thumbnail %>
+    <div class="form-row">
+      <div class="form-group col-md-8">
+        <%= form.label :title %>
+        <%= form.text_field :title, id: :title, class: 'form-control' %>
+      </div>
+      <div class="form-group col-md-4">
+        <%= form.label :thumbnail %>
+        <%= form.file_field :thumbnail, id: :thumbnail, class: 'form-control-file' %>
+      </div>
     </div>
-    <div>
-      <%= form.label :title %>
-      <%= form.text_field :title, id: :title %>
-    </div>
-    <div>
+    <div class="form-group">
       <%= form.label :chapeau %>
-      <%= form.text_field :chapeau, id: :chapeau %>
+      <%= form.text_area :chapeau, id: :chapeau, class: 'form-control' %>
     </div>
-    <div>
+    <div class="form-group">
       <%= form.label :content %>
-      <%= form.text_area :content, id: :content %>
+      <%= form.text_area :content, id: :content, class: 'form-control' %>
     </div>
-    <%= form.submit 'Save' %>
+    <%= form.submit 'Save', class: 'btn btn-primary' %>
 <% end %>
+

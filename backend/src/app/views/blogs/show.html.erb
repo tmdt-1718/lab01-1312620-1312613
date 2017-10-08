@@ -1,5 +1,10 @@
-<img src="<%= @article.thumbnail %>">
-<h1><%= @article.title %></h1>
-<h2><%= @article.chapeau %></h2>
-<p>View: <%= @article.view %></p>
+<img class="blogDetail-thumbnail img-fluid" src="<%= @article.thumbnail %>">
+<h1 class="display-4"><%= @article.title %></h1>
+<div class="blogDetail-meta">
+  <small class="text-muted mr-auto"><%= @article.created_at %></small>
+  <% if @article.view %>
+      <small class="text-muted mr-auto"><%= @article.view %></small>
+  <% end %>
+</div>
+<p class="lead"><%= @article.chapeau %></p>
 <p><%= @article.content %></p>

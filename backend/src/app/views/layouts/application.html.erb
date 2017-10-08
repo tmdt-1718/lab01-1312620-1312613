@@ -1,16 +1,20 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Src</title>
-    <%= csrf_meta_tags %>
+<head>
+  <title>Src</title>
+  <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
 
-  <body>
-    <%= render file: 'shared/_navigation_bar' %>
+<body>
+<%= render file: 'shared/_navigation_bar' %>
 
-    <%= yield %>
-  </body>
+<div class="container">
+  <%= yield %>
+</div>
+
+<%= render file: 'shared/_footer' %>
+</body>
 </html>
