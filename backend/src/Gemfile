@@ -54,3 +54,6 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # Added at 2017-10-02 18:40:34 +0000 by root:
 gem "bcrypt", "~> 3.1"
+
+# Added at 2017-10-05 16:51:06 +0000 by root:
+gem "carrierwave", "~> 1.2"

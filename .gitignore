@@ -18,6 +18,9 @@
 
 /backend/.byebug_history
 
+# Ignore public data
+/backend/src/public/data
+
 # Ignore IDE
 .idea
 
