@@ -5,7 +5,7 @@ class CreateArticles < ActiveRecord::Migration[5.1]
       t.string :chapeau
       t.string :thumbnail
       t.string :content
-      t.integer :view
+      t.integer :view, default: 0
 
       t.timestamps
     end

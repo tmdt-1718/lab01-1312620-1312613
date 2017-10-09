@@ -2,7 +2,7 @@
 @import "./*";
 
 body {
-  > .container {
+  > .container, .container-fluid {
     padding-top: 60px;
     padding-bottom: 60px;
   }

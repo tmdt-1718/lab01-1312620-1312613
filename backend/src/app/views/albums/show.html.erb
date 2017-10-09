@@ -1,6 +1,13 @@
+<%= content_for :side_bar do %>
+    <% if authorize_album params[:id] %>
+        <%= link_to 'Add images', new_album_images_path(params[:id]), class: 'nav-link' %>
+    <% end %>
+<% end %>
+
 <div class="row">
   <ul>
     <li>Author: <%= @album.user.username %></li>
+    <li>View: <%= @album.view %></li>
     <li><%= time_ago_in_words @album.created_at %></li>
   </ul>
 </div>

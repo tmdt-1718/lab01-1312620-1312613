@@ -1,3 +1,7 @@
+<%= content_for :side_bar do %>
+    <%= link_to 'Create', new_album_path, class: 'nav-link' %>
+<% end %>
+
 <div class="row">
   <% @albums.each do |album| %>
       <div class="albums-card-wrapper">

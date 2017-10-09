@@ -9,12 +9,19 @@
 </head>
 
 <body>
-<%= render file: 'shared/_navigation_bar' %>
+<%= render partial: 'shared/navigation_bar' %>
 
-<div class="container">
-  <%= yield %>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12 col-md-3">
+      <%= render partial: 'shared/side_bar' %>
+    </div>
+    <div class="col-12 col-md-9">
+      <%= yield %>
+    </div>
+  </div>
 </div>
 
-<%= render file: 'shared/_footer' %>
+<%= render partial: 'shared/footer' %>
 </body>
 </html>

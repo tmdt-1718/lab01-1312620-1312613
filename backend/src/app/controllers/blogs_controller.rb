@@ -7,6 +7,14 @@ class BlogsController < ApplicationController
     render file: 'public/500'
   end
 
+  def show
+    @article = Article.find(params[:id])
+    @article.view += 1
+    @article.save!
+  rescue => e
+    render file: 'public/500'
+  end
+
   def new
 
   end
@@ -21,9 +29,16 @@ class BlogsController < ApplicationController
     render file: 'public/500'
   end
 
-  def show
-    @article = Article.find(params[:id])
-  rescue => e
+  def destroy
+    user = current_user
+    article = user.articles.find params[:id]
+    article.destroy!
+    redirect_to blogs_path
+  rescue ActiveRecord::RecordNotFound
+    render file: 'public/404'
+  rescue ActiveRecord::RecordNotDestroyed
+    render file: 'public/500'
+  rescue
     render file: 'public/500'
   end
 

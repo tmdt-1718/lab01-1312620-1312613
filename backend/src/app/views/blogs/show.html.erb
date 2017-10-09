@@ -1,10 +1,18 @@
+<%= content_for :side_bar do %>
+    <% if authorize_blog params[:id] %>
+        <%= link_to 'Delete', blog_path(params[:id]), remote: true, method: :delete, class: 'nav-link' %>
+    <% end %>
+<% end %>
+
 <img class="blogDetail-thumbnail img-fluid" src="<%= @article.thumbnail %>">
 <h1 class="display-4"><%= @article.title %></h1>
 <div class="blogDetail-meta">
-  <small class="text-muted mr-auto"><%= @article.created_at %></small>
-  <% if @article.view %>
-      <small class="text-muted mr-auto"><%= @article.view %></small>
-  <% end %>
+  <div>
+    <small class="text-muted mr-auto"><%= @article.created_at %></small>
+  </div>
+  <div>
+    <small class="text-muted">View: <%= @article.view %></small>
+  </div>
 </div>
 <p class="lead"><%= @article.chapeau %></p>
 <p><%= @article.content %></p>

@@ -1,0 +1,7 @@
+<%= content_for :side_bar do %>
+    <% if authorize_album params[:album_id] %>
+        <%= link_to 'Delete', album_images_path({album_id: params[:album_id], id: @image.id}), remote: true, method: :delete, class: 'nav-link' %>
+    <% end %>
+<% end %>
+
+<img class="img-fluid" src="<%= @image.source %>" alt="">

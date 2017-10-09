@@ -5,4 +5,16 @@ module ApplicationHelper
     is_active = action_name ? is_controller_match && is_action_match : is_controller_match
     is_active ? 'active' : ''
   end
+
+  def authorize_album id
+    user = current_user
+    album = Album.find id
+    album.user == user ? true : false
+  end
+
+  def authorize_blog id
+    user = current_user
+    blog = Article.find id
+    blog.user == user ? true : false
+  end
 end

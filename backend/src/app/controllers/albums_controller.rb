@@ -10,8 +10,6 @@ class AlbumsController < ApplicationController
 
   def show
     @album = Album.find params[:id]
-    @album.view++
-    @album.save!
   rescue ActiveRecord::RecordNotFound => e
     redirect_to albums_path
   rescue => e

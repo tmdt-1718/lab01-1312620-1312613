@@ -6,8 +6,6 @@
         <h6 class="card-subtitle text-muted mb-2"><%= image.view %></h6>
     <% end %>
     <h6 class="card-subtitle text-muted mb-2"><%= time_ago_in_words image.created_at %></h6>
-    <% if authorize_album %>
-      <%= link_to 'Delete', album_images_path({album_id: params[:id], id: image.id}), remote: true, method: :delete, class: 'card-link' %>
-    <% end %>
+    <%= link_to 'Maximize', album_images_path({album_id: params[:id], id: image.id}) %>
   </div>
 </div>

@@ -2,6 +2,17 @@ class ImagesController < ApplicationController
   before_action :authenticate, only: [:new, :create]
   before_action :authorize_album, only: [:new, :create]
 
+  def show
+    album = Album.find params[:album_id]
+    @image = album.images.find params[:id]
+    @image.transaction do
+      @image.view += 1
+      album.view += 1
+      @image.save!
+      album.save
+    end
+  end
+
   def new
     user = current_user;
     album = user.albums.find params[:album_id]

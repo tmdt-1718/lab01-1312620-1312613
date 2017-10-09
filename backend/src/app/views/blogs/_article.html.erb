@@ -2,10 +2,12 @@
   <img class="blog-thumbnail" src='<%= article.thumbnail %>'>
   <h2 class="blog-title display-4"><%= article.title %></h2>
   <div class="blog-meta">
-    <small class="text-muted mr-auto"><%= time_ago_in_words article.created_at %></small>
-    <% if article.view %>
-        <small class="text-muted mr-auto"><%= article.view %></small>
-    <% end %>
+    <div>
+      <small class="text-muted mr-auto"><%= time_ago_in_words article.created_at %></small>
+    </div>
+    <div>
+      <small class="text-muted">View: <%= article.view %></small>
+    </div>
   </div>
   <p><%= article.chapeau %></p>
   <%= link_to 'See more', blog_path(article.id) %>
